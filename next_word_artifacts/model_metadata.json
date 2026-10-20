@@ -1,0 +1,11 @@
+{
+    "model_type": "Embedding-LSTM",
+    "max_sequence_length": 20,
+    "max_vocab_size": 20000,
+    "effective_vocab_size": 20000,
+    "oov_token": "<OOV>",
+    "padding_token_id": 0,
+    "oov_token_id": 1,
+    "embedding_dimension": 128,
+    "lstm_units": 128
+}

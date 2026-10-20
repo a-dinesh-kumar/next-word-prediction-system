@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111827">
+    <title>NexText AI | Next Word Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/app.js" defer></script>
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="/">
+            <span class="brand-icon">N</span>
+            <span>NexText <span class="brand-ai">AI</span></span>
+        </a>
+        <div class="social-links">
+            <a
+                href="https://github.com/a-dinesh-kumar"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit GitHub profile"
+                title="GitHub"
+            >
+                <img src="/static/icons/github.png" alt="GitHub">
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/dinesh-kumar-alagarsamy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit LinkedIn profile"
+                title="LinkedIn"
+            >
+                <img src="/static/icons/linkedin.png" alt="LinkedIn">
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <p class="eyebrow">AI-POWERED WRITING</p>
+            <h1>Where will your words go next?</h1>
+            <p class="subtitle">
+                Explore next-word predictions or generate a text continuation
+                using a trained LSTM language model.
+            </p>
+        </section>
+
+        <section class="workspace">
+            <div class="input-panel">
+                <label for="inputText">Your starting text</label>
+                <textarea
+                    id="inputText"
+                    rows="5"
+                    maxlength="5000"
+                    placeholder="Try: The team won the"
+                ></textarea>
+
+                <div class="input-meta">
+                    <span>Enter a phrase to get started.</span>
+                    <span id="charCount">0 / 5000</span>
+                </div>
+
+                <div class="actions">
+                    <button id="predictButton" class="button primary">
+                        Predict next words
+                    </button>
+                    <button id="generateButton" class="button secondary">
+                        Generate text
+                    </button>
+                    <button id="clearButton" class="button clear">
+                        Clear
+                    </button>
+                </div>
+
+                <div id="generationOptions" class="generation-options" hidden>
+                    <div class="field">
+                        <label for="numWords">Words to generate</label>
+                        <select id="numWords">
+                            <option value="10">10 words</option>
+                            <option value="20" selected>20 words</option>
+                            <option value="30">30 words</option>
+                            <option value="50">50 words</option>
+                            <option value="100">100 words</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="strategy">Generation strategy</label>
+                        <select id="strategy">
+                            <option value="sampled" selected>Sampled</option>
+                            <option value="greedy">Greedy</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <section class="result-panel" aria-live="polite">
+                <div class="result-heading">
+                    <div>
+                        <p class="eyebrow">MODEL OUTPUT</p>
+                        <h2 id="resultTitle">Your results will appear here</h2>
+                    </div>
+                    <span id="resultBadge" class="result-badge">Ready</span>
+                </div>
+
+                <div id="message" class="message" hidden></div>
+                <div id="oovWarning" class="warning" hidden></div>
+
+                <div id="results">
+                    <div class="empty-state">
+                        <div class="empty-icon">✦</div>
+                        <p>Start with a phrase above.</p>
+                        <span>Your predictions or generated text will appear here.</span>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <footer>
+            <span>NexText AI</span>
+            <span>Next Word Prediction System · Embedding + LSTM</span>
+        </footer>
+    </main>
+</body>
+</html>
